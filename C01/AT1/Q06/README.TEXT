@@ -1,0 +1,39 @@
+1. Classification of Image Formation Models
+Forward Optical Models: Mapping Light to Pixels
+
+Representation Goal: Forward models mathematically map the continuous, 3D physical world into a discrete, 2D grid of pixel intensities by simulating the physics of light propagation, lens optics, and sensor electronics.
+Governing Factor: It is entirely constrained by **Deterministic Physical Equations** that account for variables like lens distortion coefficients, sensor quantum efficiency, and geometric projections ($3\text{D} \rightarrow 2\text{D}$).
+System Characteristic: This model provides a precise mathematical blueprint of how structural degradations—such as chromatic aberration, motion blur, and sensor noise—are injected into the image stream during the moment of capture.
+
+Inverse Physics Models: Restoring Lost Reality
+
+Representation Goal: Inverse models undo the mathematical distortions introduced by the physical hardware to reconstruct the true, uncorrupted scene radiance.
+Governing Factor: It relies heavily on **Computational Deconvolution and Estimation Algorithms** that solve mathematically ill-posed problems by reversing the forward model matrix equations.
+System Characteristic: This stage takes the degraded digital pixel output and actively eliminates physical artifacts, restoring clean edge profiles and highly accurate spatial details.
+
+
+ 2. Technical Justification by Application
+ Geometric Rectification: Calibrating Lens Distortion
+
+* **Representation Goal:** Autonomous vehicles rely on wide-angle or fisheye lenses to maximize their field of view, which introduces severe geometric warping (pin-cushion or barrel distortion) at the frame edges.
+* **Functional Elements:** Forward camera intrinsic models define the exact mathematical mapping of the lens curve. Inverse distortion equations then warp the pixel grid back into a rectilinear coordinate space in real time.
+* **Autonomous Driving Imperative:** Because trajectory planning algorithms need to know the precise physical distance to an obstacle, geometric correction is critical to ensure that a curved lane line or warped pedestrian boundary is mapped onto its exact real-world 3D spatial coordinates.
+
+ Motion Blur Deconvolution: Restoring High-Speed Edge Contrast
+
+Representation Goal: When a vehicle travels at high speeds or encounters vibrations from uneven road surfaces, the camera sensor integrates light across moving pixels during the exposure window, creating destructive motion blur.
+Functional Elements: The system estimates a spatial blur function (Point Spread Function, or PSF) using external vehicle telemetry data from Inertial Measurement Units (IMUs) and wheel odometry sensors.
+Autonomous Driving Imperative: By applying inverse filtering or Wiener deconvolution using this calculated PSF, the pipeline sharpens blurred boundaries, allowing object detection networks to cleanly isolate overlapping objects and read distant traffic signs at highway speeds.
+
+ Atmospheric and Low-Light Radiance Correction: Handling Harsh Environments
+
+Representation Goal:** Extreme weather conditions like thick fog, heavy rain, or blinding nighttime glare from oncoming headlights severely scatter light, destroying image contrast and color fidelity.
+Functional Elements:** Atmospheric scattering models (such as the Dark Channel Prior or physical haze models) calculate how much light is scattered versus how much direct scene radiance actually reaches the glass elements.
+Autonomous Driving Imperative:** By calculating and subtracting the scattered ambient light component frame-by-frame, the image processor dramatically shifts the contrast floor upward. This turns a completely washed-out, low-contrast fog stream into a highly legible road layout, keeping lane-keeping assistance systems functional in poor visibility.
+
+3. Practical Real-Time Hardware & Latency Constraints
+
+In industrial automotive perception design, balancing mathematical model precision with processing throughput is a critical safety optimization problem:
+
+The Safety Latency Window:** Autonomous vehicles cannot afford deep-learning or multi-frame iterations that introduce lag; the entire image quality enhancement stage must execute in **under 10 milliseconds** to prevent delaying critical braking decisions.
+The Compute Optimization:** Complex inverse physical matrix equations are heavily optimized and burned directly into the hardware registers of the vehicle's embedded Image Signal Processor (ISP) or parallelized across dedicated automotive GPUs, ensuring immediate enhancement before the data stream hits the AI perception stack.

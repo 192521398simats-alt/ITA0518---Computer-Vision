@@ -1,6 +1,6 @@
 
 ## How Sampling Affects Image Quality
-In digital image formation, **sampling** is the process of converting a continuous optical scene (light passing through a lens) into a discrete grid of pixels on a digital sensor. The spatial sampling rate—determined by your pixel density—dictates how finely the details of the scene are captured.
+In digital image formation, sampling is the process of converting a continuous optical scene (light passing through a lens) into a discrete grid of pixels on a digital sensor. The spatial sampling rate—determined by your pixel density—dictates how finely the details of the scene are captured.
 
 1. Violation of the Nyquist-Shannon Theorem
 
@@ -12,7 +12,7 @@ The Failure: When the spatial details of a scene (like fine fabric patterns or d
 
 When this mathematical threshold is crossed, high-frequency details do not simply disappear; they misrepresent themselves. This is known as **aliasing**:
 
-Frequency Folding:** High-frequency spatial details "fold back" into lower, slower frequencies. The sensor misinterprets these rapid optical changes as broader, slower wavesVisual Distortions:** This misinterpretation manifests as destructive artifacts, most notably **Moiré patterns** (strange, wavy color ripples on repetitive textures) and **pixelation/jaggies** (stair-stepping along diagonal lines).
+Frequency Folding:High-frequency spatial details "fold back" into lower, slower frequencies. The sensor misinterprets these rapid optical changes as broader, slower wavesVisual Distortions:** This misinterpretation manifests as destructive artifacts, most notably **Moiré patterns** (strange, wavy color ripples on repetitive textures) and **pixelation/jaggies** (stair-stepping along diagonal lines).
 
 Why it looks "blurred": When fine, high-frequency details are lost or masked by these low-frequency artifacts, the human eye perceives the overall image as muddy, degraded, or lacking sharpness. Furthermore, when the system attempts to reconstruct or display this undersampled data on a screen, standard interpolation algorithms (like bilinear or bicubic) smooth out the jagged edges, which directly introduces a soft, hazy **interpolation blur**.
 

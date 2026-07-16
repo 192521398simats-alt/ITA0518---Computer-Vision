@@ -1,0 +1,44 @@
+1. Classification of Spatial Discretization in the Image Pipeline
+
+Continuous-to-Discrete Mapping: Spatial Coordinate Sampling**
+Representation Goal: Spatial sampling converts a continuous, infinite two-dimensional light distribution focused by an optical lens into a discrete matrix of individual spatial coordinates (pixels).
+Governing Factor: It is entirely constrained by the **Spatial Sampling Frequency** ($f_s$), which defines the mathematical grid density (pixels per millimeter or sensor pitch size).
+System Characteristic: This model strips down continuous real-world details into rigid, square integer value blocks. A low-resolution sensor offers a low spatial sampling frequency, yielding large pixel sizes that struggle to resolve fine spatial frequencies.
+
+
+Resolution Limits: The Nyquist-Shannon Sampling Criterion**
+Representation Goal To accurately capture and reconstruct an object's structural features without introducing destructive visual distortion.
+Governing Factor: It is dictated by the **Nyquist Frequency Limit**, which states that the spatial sampling rate must be at least twice the highest spatial frequency ($f_{max}$) present in the optical image:
+
+$$f_s > 2 \cdot f_{max}$$
+
+
+System Characteristic: If an object contains micro-textures or fine lines that alternate faster than the Nyquist limit allows, the system drops below the critical sampling threshold. This creates an artifact known as **spatial aliasing** (Moiré patterns), where high-frequency structural details masquerade as coarse, jagged, and false low-frequency patterns.
+
+2. Technical Justification of Impact on Object Visibility
+Loss of High-Frequency Edge Information: The Spatial Blur Artifact
+Representation Goal: Objects are structurally identified in computer vision by their high-frequency details, specifically their sharp boundaries, distinct edges, and micro-textures.
+Functional Elements: When spatial sampling is coarse (low resolution), the integration area of each individual photodiode covers a wide physical zone of the scene.
+Image Detail Imperative:** Distinct high-frequency transitions (like the sharp boundary between an object and its background) are mathematically averaged across a single large pixel. This integration acts as a low-pass spatial filter, blurring sharp edges into gradual gray ramps and destroying the high-contrast boundaries necessary for object visibility.
+
+
+Spatial Resolution vs. Object Scale: Sub-Pixel Compression Failure
+Representation Goal: For an object or feature to be detected and classified, its physical projection must span a minimum critical number of sensor pixels.
+Functional Elements: If a distant or tiny object projects onto an area smaller than a single pixel (sub-pixel dimension), its distinct structural signature is compressed into a single composite value.
+Image Detail Imperative: The unique geometric properties of the object are completely blended with the surrounding background intensities. Once spatial detail is mathematically mixed inside the photodiode area during sampling, it is physically impossible to isolate or identify the object, causing complete visibility failure.
+
+
+Point Spread Function (PSF) & Optical Blurring Limits
+Representation Goal : The image formation process is governed by the optics of the system, which dictates how a single perfect point source of light spreads across the sensor grid.
+Functional Elements: Real-world optical lenses introduce diffraction limits and geometric aberrations, modeled mathematically by convolving the true scene with the system's Point Spread Function** ($PSF$):
+
+$$I_{\text{formed}}(x,y) = I_{\text{true}}(x,y) * PSF(x,y)$$
+
+Image Detail Imperative:** If the physical pixel size of a low-resolution sensor is much larger than the blur circle of the optical $PSF$, the digital sampling grid becomes the ultimate bottleneck for visibility. The coarse grid fails to parse the fine spatial structures provided by the lens, turning crisp shapes into unidentifiable, blocky pixel patches.
+
+3. Practical Hardware & Bandwidth Constraints
+
+In optical and digital imaging systems engineering, balancing spatial resolution involves navigating concrete structural and computational trade-offs:
+
+The Silicon Scale Burden:Increasing resolution by shrinking pixel pitch size to capture high spatial frequencies decreases the physical surface area of each individual pixel. This drastically reduces the pixel's photon-gathering capacity, which increases Photon Shot Noise and compromises low-light visibility.
+increases the computational workload, memory footprints, and frame-rate bandwidth requirements by exactly a factor of four ($2^2$), demanding faster image signal processors (ISPs).

@@ -1,0 +1,19 @@
+1. The overarching theme is the Role of Image Sensing Mechanisms, which is analyzed through four primary pillars: Sensor Characteristics, Noise Generation, Acquisition Quality, and Literature Perspectives.
+
+2. Within the hardware branch, Sensor Architecture (CCD, CMOS, BSI) dictates the physical geometry, including Pixel Size & Pitch and the Fill Factor.
+
+3. These physical dimensions directly determine the sensor's performance capabilities, where Fill Factor determines Dynamic Range and leads to Dark Current leakage, while pixel size dictates Full Well Capacity.
+
+4. Simultaneously, Noise Generation introduces multiple signal degradations, starting with Shot Noise, which is dictated by the physics of the Photon Shot Noise (Poisson process).
+
+5. An internal hardware loop shows that Shot Noise is affected by Light Intensity, while an external loop shows it is affected by Dark Current, linking noise directly to the hardware's operating state (e.g., temperature and exposure time).
+
+6. Thermal processes further introduce Thermal Noise (Dark Current Noise), and the readout electronics determined by Fixed Pattern Noise (FPN/PRNU) add Read Noise (amplifier, reset, and ADC noise).
+
+7. These foundational hardware parameters filter downstream into the central, defining metric of Acquisition Quality: the total Signal-to-Noise Ratio (SNR).
+
+8. The map confirms that SNR is not determined by a single factor, but rather all noise types (Shot, Thermal, Read, FPN, and Gaussian) directly affect the Signal-to-Noise Ratio (SNR).
+
+9. Total SNR, in combination with hardware performance, dictates all other facets of perceived quality, where a low SNR reduces Color Fidelity and leads to various Artifacts (aliasing, chromatic aberration, demosaicing artifacts).
+
+10. Finally, the map visualizes a separate Image Formation Process, which serves as the physical timeline for these technical factors, tracing visual data from Scene Radiance through Lens and Charge Accumulation to final Digital Image Data.

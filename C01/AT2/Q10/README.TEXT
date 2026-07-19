@@ -1,0 +1,19 @@
+1. The framework originates with Image Capture & Digitization, which immediately parallel branches into two foundational discretization processes: Sampling (Spatial Sampling) and Quantization.
+
+2. Sampling performance is bound by balancing the input Scene Frequency (Fmax) (scene complexity) against the system's Sampling Rate (Fs) (pixel density).
+
+3. A direct causal path shows that when Fs < 2 * Fmax (known as Undersampling), the system causes Aliasing (Artifact Generation).
+
+4. This generative relationship is anchored in the Theoretical Insights (Nyquist-Shannon) panel, which confirms that satisfying Fs >= 2 * Fmax is critical for perfect reconstruction.
+
+5. The map integrates literature (Gonzalez & Woods, Szeliski) to prove that adherence to the Nyquist Criterion Prevents Aliasing.
+
+6. When aliasing occurs, it simultaneously causes three primary and distinct physical artifacts: Moiré Patterns, Jagged Edges / Stair-casing, and the misinterpretation of Higher Frequencies Appearing as Lower Frequencies.
+
+7. These parallel artifacts converge in a singular downstream end-state, as they collectively result in Image Distortion & Fidelity Loss (Quality Degradation).
+
+8. The map utilizes this cumulative quality loss as a primary cause that itself leads to a bottleneck for Downstream Computer Vision Tasks.
+
+9. As shown in the bottom right, this distortion impacts negatively specific tasks like Object Detection (confusing bounding boxes) and Medical Imaging (leading to misdiagnosis).
+
+10. Finally, the entire framework provides a remedial path, illustrating that total system quality can only be restored via Remedial & Optimization Pathways, specifically by increasing hardware sampling rate or applying anti-aliasing filters.

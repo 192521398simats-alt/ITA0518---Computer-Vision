@@ -1,0 +1,19 @@
+1. Following the initial hardware capture, the continuous analog voltages undergo Analog-to-Digital Conversion (ADC) to construct the foundational Digital Image Representation used across all intermediate stages.
+
+2. This digital representation serves as the baseline to extract initial structural components, mapping out Segmentation Masks, Contours, Point Clouds, and Optical Flow.
+
+3. The pipeline routes this data into 2. Pre-processing & Normalization to standardize inputs, clean up noise, and prepare matrices for feature algorithms.
+
+4. In 3. Feature Extraction & Abstraction, the system isolates Low-level Features—specifically Edges, Corners, Textures, and SIFT descriptors—drawing on foundational literature like David Marr's vision theories.
+
+5. These primitive structures are aggregated into Mid-level Features and Global Descriptors to form holistic representations of the entire image canvas.
+
+6. The processed structural data can be saved as a standard 5. Digital Image (Final Output), which packages the visual data into specific Data Formats (RAW, JPEG, PNG, HEIC), Metadata (EXIF data and exposure settings), and Compression protocols (Lossy or Lossless).
+
+7. Simultaneously, features flow downstream into Intermediate Analysis & Modeling tasks, feeding into core functional layers like Object Detection and Instance Segmentation.
+
+8. The spatial and dynamic environment is mapped through 3D Scene Reconstruction and Temporal Tracking, utilizing literature frameworks like V-SLAM by Zhang et al.
+
+9. The system culminates in 5. High-Level Scene Understanding & Decision Making, translating visual patterns into sequential cognitive events starting with Action Recognition and Contextual Reasoning.
+
+10. Utilizing deep network backbones (referencing Kaiming He et al.'s ResNet and Mask R-CNN architectures), the system executes Pose Estimation to guide real-world operat

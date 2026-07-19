@@ -1,0 +1,19 @@
+1. The overarching theme is Spatial Resolution, which is defined and affected by two distinct, parallel pathways: Imaging Hardware & Optics and Signal Processing & Sampling.
+
+2. Within the hardware path, the Image Sensor and its associated Sensor Architecture determine the basic pixel grid. A critical direct relationship established in the diagram is that smaller Pixel Size is the factor that increases total spatial resolution.
+
+3. Sensor performance is bound by its Sensor Dimensions and Fill Factor, all of which must pass through the physical limitations of the Optics & Lenses.
+
+4. The optics layer introduces physical constraints, where Aperture & Diffraction limit performance, and a low Modulation Transfer Function (MTF) can blur the final output. The system must maintain a strong MTF to maximize resolution.
+
+5. Within the sampling path, Signal Processing & Sampling are governed by mathematical principles. The Sampling Theorem and Nyquist-Shannon Criterion establish the necessary thresholds to prevent Aliasing Artifacts.
+
+6. Following successful discretization, Sampling Rate (Spatial) and Pixel Density (e.g., PPI, DPI) emerge as the two primary, quantifiable metrics and representations of the resolution.
+
+7. In a crucial system-wide loop, the diagram confirms that these established spatial parameters (Sampling Rate and Pixel Density) "results in" the final, measured Spatial Resolution.
+
+8. The map utilizes Supporting Evidence from Literature at critical connection points, citing Gonzalez & Woods, Pratt, and Szeliski to validate the roles of sampling and sensor hardware.
+
+9. Finally, total Spatial Resolution fidelity filters downstream into specific Application Requirements, establishing the target thresholds for real-world functionality.
+
+10. For safety-critical use cases like Medical Imaging, this chain dictates that High Spatial Resolution is required for successfully Diagnosing Small Lesions, while for safety-critical use cases like Biometrics, high resolution is necessary for Feature Extraction.

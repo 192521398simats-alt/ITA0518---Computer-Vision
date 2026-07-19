@@ -1,0 +1,19 @@
+1. The overarching concept is Digital Image Formation, which is fundamentally composed of three branching processes: Image Sensing & Acquisition, Sampling (Spatial Sampling), and Quantization (Tonal Quantization).
+
+2. Branching from Image Sensing & Acquisition, the map shows that light interacts with Optics/Lenses before reaching the Sensor (CCD/CMOS), which utilizes the Photoelectric Effect to convert photons to signal.
+
+3. A direct causal path indicates that Image Sensing & Acquisition generates SNR (Signal-to-Noise Ratio), which is impacted by Sensor Noise and determines Dynamic Range.
+
+4. Simultaneously, Optics/Lenses generate a second, independent SNR, and this combined SNR structure directly impacts Image Quality & Fidelity.
+
+5. Following the second main branch, Sampling determines the parameters of Continuous to Discrete (Spatial) data, which in turn causes Spatial Resolution.
+
+6. Spatial Resolution dictates performance on two downstream quality axes, leading to either successful Morarttcal definition or, conversely, Detail Loss.
+
+7. The Sampling branch also utilizes specific mathematical principles, citing the Nyquist-Shannon Sampling Theorem to define Critical Sampling, which is essential for successful Image Reconstruction.
+
+8. Following the third main branch, Quantization generates Continuous to Discrete (Intensity) data and defines Bit Depth, which causes and dictates Radiometric Resolution.
+
+9. This Quantization path highlights a negative quality trade-off: insufficient bit depth (or Uniform Quantization) requires a specific check, as it causes False Contouring and subsequent Posterization.
+
+10. All three physical-to-discrete streams (Sensor SNR, Spatial Sampling, and Tonal Quantization) converge at the bottom, directly determining the total level of Image Quality & Fidelity.

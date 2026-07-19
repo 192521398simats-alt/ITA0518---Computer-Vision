@@ -1,3 +1,4 @@
+
 1. The overarching theme is Spatial Resolution, which is defined and affected by two distinct, parallel pathways: Imaging Hardware & Optics and Signal Processing & Sampling.
 
 2. Within the hardware path, the Image Sensor and its associated Sensor Architecture determine the basic pixel grid. A critical direct relationship established in the diagram is that smaller Pixel Size is the factor that increases total spatial resolution.

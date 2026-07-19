@@ -1,0 +1,19 @@
+1. The central node, System Capabilities, defines the total operating potential of a vision system, acting as the foundation for how data is captured, processed, and utilized.
+
+2. It directly affects Image Acquisition, which encompasses the hardware properties of the sensor itself (Sensor Resolution, Frame Rate, Spectral Range, and Optics/Lenses).
+
+3. Under this acquisition path, Sensor Resolution affects Object Size & Detail, and the specific Spectral Range (e.g., RGB, IR, Multispectral) determines what information the system can see.
+
+4. System Capabilities simultaneously influences Image Processing, governing the execution speed through Hardware Acceleration (GPU, VPU, FPGA), and managing crucial metrics like Latency (real-time vs. batch) and Bit Depth.
+
+5. System Capabilities further requires specific Model Architectures, which must be selected from Deep Learning (CNNs) or classical vision methods, directly impacting the system's final model Generalization.
+
+6. Consequently, System Capabilities improves Algorithm Complexity by managing Computational Cost (OPS, FLOPs), but this path must navigate inherent limitations: Computational Cost affects Motion Tracking Accuracy.
+
+7. These performance vectors are all bound by Resource Constraints, as System Capabilities directly constrains available Processing Power, Memory Bandwidth, and physical limits like Storage and Power Consumption.
+
+8. As highlighted in the map's rightward arrows, these capabilities (Acquisition, Processing, Architecture, and Resources) collectively influence Vision-Based Application Selection & Effectiveness, establishing the criteria for what tasks are feasible.
+
+9. As shown in the top-right block, this influence dictates feasibility and effectiveness for industrial tasks like Defect Detection and Assembly within Industrial Automation, and diagnostic accuracy in Healthcare monitoring.
+
+10. Finally, these capabilities determine operational safety for mobile and critical systems, such as Object Avoidance and Driver Monitoring in Transportation & Autonomous Systems, and accurate classification in Agriculture & Environmental sorting.

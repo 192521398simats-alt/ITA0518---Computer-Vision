@@ -1,0 +1,19 @@
+1. The framework originates from Image Fundamentals, splitting into Image Resolution (governing spatial fidelity) and Intensity Levels (governing radiometric fidelity).
+
+2. Under the spatial branch, Spatial Resolution is defined by pixel density (PPI/DPI) and sampling frequency, measured in megapixels, and instantiated in Common Formats like HD, 4K, and 8K.
+
+3. A cause-and-effect relationship shows that Higher Resolution yields increased spatial detail and sharper object edges, while Lower Resolution results in pixelation artifacts and a loss of geometric detail.
+
+4. Simultaneously, Intensity Levels dictate Radiometric Resolution (quantization bit depth and gray levels), measuring across 8-bit to 16-bit scales, with Examples including Greyscale, RGB, and HDR.
+
+5. Operating as a distinct cause-and-effect loop, Higher Intensity Levels yield smoother color gradients and reduced posterization, while Lower Intensity Levels produce false contouring, loss of color shades, and poor low-light detail.
+
+6. These structural paths converge as the primary Determinants of Image Fidelity, which directly influence Factors Affecting Perception inside the Human Visual System (HVS), modulating contrast sensitivity, acuity, and the Modulation Transfer Function (MTF).
+
+7. Visual performance shifts downstream into Image Quality Metrics, evaluating spatial and tonal data through Objective math frameworks (PSNR, SSIM, FSIM) and Subjective human testing (Mean Opinion Score - MOS).
+
+8. These combined quality metrics determine Application Usability, establishing direct functional pathways across high-precision fields like Medical Diagnosis, Satellite Mapping, Biometrics, and Media Broadcast.
+
+9. This usability network similarly dictates performance thresholds for critical downstream data workflows, including X-Ray Imaging, Night Vision, Cinema Production, and Machine Learning Training.
+
+10. The entire system map is anchored by Literature & Evidence, citing foundational textbooks (Gonzalez & Woods, Pratt, Szeliski) and validation metrics (Wang et al., 2004) to prove how spatial sampling and quantization dictate real-world task accuracy.

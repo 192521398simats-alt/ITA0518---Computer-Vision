@@ -1,0 +1,19 @@
+1. The framework organizes Computer Vision into a clear hierarchy with three distinct tiers: Tier 1 (Low-Level), Tier 2 (Mid-Level), and Tier 3 (High-Level).
+
+2. At the foundational layer, Tier 1: Low-Level Visual Processing operates purely on pixels and matrices, covering essential foundational tasks starting with Image Acquisition and Pixel Manipulations.
+
+3. Tier 1 continues with Sensing & Denoising and Filtering & Enhancement, as well as Geometric Transformations which enable final spatial alignment via Homography & Warp.
+
+4. Tier 1 explicitly cites foundational literature for edge detection, referencing Gonzalez & Woods for Sobel and Canny operators.
+
+5. This low-level processing provides the input for Tier 2: Mid-Level Visual Analysis, which is defined by structural aggregation and creating representations from Tier 1 output.
+
+6. Key processes in Tier 2 include Segmentation (Semantic, Instance) and Feature Extraction, and this layer cites iconic mathematical descriptors like SIFT and ORB by Lowe.
+
+7. Tier 2 also analyzes motion and spatial structure through Optical Flow (citing Lucas-Kanade) and 3D Scene Reconstruction (SfM).
+
+8. Mid-level analysis then abstracts these features, which Tier 3: High-Level Visual Interpretation uses to construct semantic understanding and reasoning.
+
+9. Tier 3 utilizes the revolutionary performance of Deep Learning Backbones (CNNs, Transformers) and cites seminal breakthroughs such as AlexNet and ResNet by Krizhevsky et al. and He et al.
+
+10. Finally, these high-level interpretations drive concrete Downstream Vision Applications, including Autonomous Driving, Medical Imaging, and Surveillance.

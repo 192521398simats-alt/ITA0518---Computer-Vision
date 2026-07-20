@@ -1,3 +1,5 @@
+"""5. Perform basic Image Handling and processing operations on the image
+• Read an image in python  and  Erode an Image using erode function."""
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt

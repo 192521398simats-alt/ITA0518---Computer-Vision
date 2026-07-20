@@ -1,3 +1,6 @@
+"""4. Perform basic Image Handling and processing operations on the image
+• Read an image in python  and  Dilate an Image using Dilate function."""
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt

@@ -1,3 +1,5 @@
+"""2. Perform basic Image Handling and processing operations on the image
+• Read an image in python and Convert an Image to Blur using GaussianBlur."""
 import cv2
 import matplotlib.pyplot as plt
 from google.colab import files

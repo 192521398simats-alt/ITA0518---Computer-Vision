@@ -1,0 +1,37 @@
+import cv2
+import matplotlib.pyplot as plt
+
+# Replace this with the exact filename as it appears in your Colab files tab
+image_path = 'image_20b4b2.jpg' 
+
+# Read the image
+img_bgr = cv2.imread(image_path)
+
+# Ensure the image was loaded correctly
+if img_bgr is not None:
+    # Convert to RGB for display
+    img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+    
+    # Convert to Grayscale for Canny
+    img_gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
+    
+    # Apply Canny Edge Detection
+    # You can adjust these threshold values (100, 200) to refine the outline
+    img_canny = cv2.Canny(img_gray, 100, 200)
+    
+    # Display the results
+    plt.figure(figsize=(12, 6))
+    
+    plt.subplot(1, 2, 1)
+    plt.imshow(img_rgb)
+    plt.title("Original Image")
+    plt.axis("off")
+    
+    plt.subplot(1, 2, 2)
+    plt.imshow(img_canny, cmap="gray")
+    plt.title("Canny Outline")
+    plt.axis("off")
+    
+    plt.show()
+else:
+    print(f"Error: Could not find '{image_path}'. Please check the filename in the files tab.")
